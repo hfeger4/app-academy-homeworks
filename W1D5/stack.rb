@@ -1,3 +1,4 @@
+#Exercise 1
 class Stack
   def initialize
     @stack = []
@@ -5,7 +6,7 @@ class Stack
 
   def add(el)
     @stack << el
-    el 
+    el
   end
 
   def remove
@@ -15,4 +16,24 @@ class Stack
   def show
     @stack.dup
   end
+end
+
+#Exercise 2
+class Queue
+  def initialize
+    @queue = []
+  end
+
+  def enqueque(el)
+    @queue.unshift(el)
+    el
+  end
+
+  def dequeue
+    @queue.pop
+  end
+
+  def show
+    @queue.dup
+  end 
 end
