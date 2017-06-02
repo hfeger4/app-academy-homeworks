@@ -35,5 +35,30 @@ class Queue
 
   def show
     @queue.dup
-  end 
+  end
+end
+
+#Exercise 3
+class Map
+  def initialize
+    @map = []
+  end
+
+  def assign(key, val)
+    @map << [key, val]
+  end
+
+  def lookup(user_key)
+    @map.each do |key, val|
+      return [key, val] if user_key == key
+    end
+  end
+
+  def remove(key)
+    @map.each { |k, v| @map.delete([ k, v]) if key == k }
+  end
+
+  def show
+    @map.dup
+  end
 end
