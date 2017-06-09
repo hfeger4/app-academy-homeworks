@@ -27,16 +27,31 @@ class Board
     if current_player_name == @name1
       i = 0
       until @cups[start_pos].length <= 0
+      ending_cup_idx = start_pos + i
         i += 1 if start_pos+i == 13
         @cups[(start_pos+i) % @cups.length] << @cups[start_pos].pop
         i += 1
       end
+    else
+      i = 0
+      until @cups[start_pos].length <= 0
+      ending_cup_idx = start_pos + i
+        i += 1 if start_pos+i == 0
+        @cups[(start_pos+i) % @cups.length] << @cups[start_pos].pop
+        i += 1
+      end
     end
+
     render
+    next_turn(ending_cup_idx)
   end
 
   def next_turn(ending_cup_idx)
-    # helper method to determine what #make_move returns
+    case ending_cup_idx
+    when @cups[ending_cup_idx].empty?
+      move_result = :switch
+    end
+
 
   end
 
